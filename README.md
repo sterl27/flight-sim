@@ -14,27 +14,30 @@ A comprehensive, modern 3D flight simulation ecosystem built with cutting-edge w
 ## ✨ Features
 
 ### 🛩️ Core Flight Simulation
-- **Realistic Physics**: Advanced flight dynamics with @react-three/cannon
-- **Multiple Aircraft**: F-16, Cessna, and custom aircraft models
-- **Terrain & Environment**: Dynamic landscapes with realistic textures
-- **Weather Systems**: Atmospheric effects and environmental conditions
+- **3D Aircraft**: Custom-built fighter jet model with fuselage, wings, tail, and engines
+- **Physics-Based Flight**: Realistic movement using @react-three/cannon physics engine
+- **Terrain & Environment**: Ground plane with collision detection and atmospheric effects
+- **Dynamic Lighting**: Directional lighting with shadows for realistic rendering
 
-### 🎮 Advanced Systems
-- **Cockpit Instrumentation**: Full MFD (Multi-Function Display), HUD, and gauges
-- **AI Systems**: Intelligent co-pilots and automated flight assistants
-- **Radio Communications**: Realistic ATC and pilot communications
-- **Mission Planning**: SAM (Surface-to-Air Missile) systems and combat scenarios
+### 🎮 Flight Controls
+- **WASD / Arrow Keys**: Pitch up/down, roll left/right
+- **Q/E Keys**: Yaw left/right
+- **Space Bar**: Increase throttle
+- **Shift Key**: Decrease throttle
+- **R Key**: Reset aircraft to starting position
+- **Mouse**: Orbit camera controls
 
-### 🌐 Multiplayer & Networking
-- **Peer-to-Peer**: Real-time multiplayer using PeerJS
-- **World State**: Shared simulation environment
-- **Voice Chat**: Integrated communication systems
+### 📊 Real-Time HUD
+- **Flight Data Display**: Altitude, airspeed, throttle percentage, and position
+- **Visual Indicators**: Active throttle gauge and status displays
+- **Control Instructions**: On-screen help for all flight controls
+- **Status Monitoring**: Active/paused state and camera mode
 
-### 🛠️ Developer Experience
-- **Modern Stack**: React 18, TypeScript, Vite, Three.js
-- **State Management**: Zustand for efficient state handling
-- **Build Tools**: Optimized bundling and deployment
-- **CI/CD**: Automated testing and deployment pipelines
+### 🛠️ Technical Features
+- **State Management**: Zustand store for aircraft state and game data
+- **3D Rendering**: Three.js with React Three Fiber for smooth performance
+- **Physics Simulation**: Realistic gravity, thrust, and collision detection
+- **Responsive UI**: Overlay interface that doesn't interfere with 3D scene
 
 ## 🚀 Quick Start
 
@@ -89,27 +92,25 @@ vercel deploy --prod
 ```
 flight-sim/
 ├── src/
-│   ├── game/           # Core game logic
-│   ├── ai/            # AI systems and behaviors
-│   ├── sam/           # Surface-to-Air Missile systems
-│   ├── radio/         # Communication systems
-│   ├── world/         # World/environment management
-│   ├── utils/         # Utility functions
-│   ├── state/         # Global state management
-│   ├── ui/            # User interface components
-│   ├── cockpit/       # Cockpit systems
-│   │   ├── Gauges/    # Flight instruments
-│   │   ├── MFD/       # Multi-Function Displays
-│   │   └── HUD/       # Heads-Up Display
-│   ├── components/    # Reusable React components
+│   ├── components/    # React components
+│   │   ├── Aircraft.tsx   # 3D aircraft with physics
+│   │   ├── Ground.tsx     # Terrain with collision
+│   │   └── UI.tsx         # HUD and controls overlay
+│   ├── state/         # State management
+│   │   └── gameStore.ts   # Zustand store for game state
+│   ├── ai/            # (Planned) AI systems
+│   ├── sam/           # (Planned) Missile systems
+│   ├── radio/         # (Planned) Communication systems
+│   ├── world/         # (Planned) Environment management
+│   ├── utils/         # (Planned) Utility functions
+│   ├── cockpit/       # (Planned) Cockpit systems
 │   ├── App.tsx        # Main application component
 │   └── main.tsx       # Application entry point
-├── assets/            # 3D models, textures, sounds
-├── tools/             # Development tools and CLI
+├── assets/            # 3D models, textures (placeholder)
+├── tools/             # Development CLI tools
 ├── public/            # Static assets
 ├── .github/           # CI/CD workflows
-├── dist/              # Build output
-└── docs/              # Documentation
+└── dist/              # Build output
 ```
 
 ## 🛠️ Available Scripts
